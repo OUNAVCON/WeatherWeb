@@ -1,0 +1,3 @@
+Private-Package:  \
+	org.weather.impl
+Bundle-Activator: org.weather.impl.Activator

@@ -1,0 +1,48 @@
+!SESSION 2014-12-24 13:07:44.015 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_20
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2014-12-24 13:08:03.794
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+!ENTRY org.eclipse.core.jobs 4 2 2014-12-24 13:08:30.749
+!MESSAGE An internal error occurred during: "Building workspace".
+!STACK 0
+java.lang.Error: DM Annotation plugin failure
+	at org.apache.felix.dm.annotation.plugin.bnd.AnnotationPlugin.analyzeJar(AnnotationPlugin.java:130)
+	at aQute.bnd.osgi.Analyzer.doPlugins(Analyzer.java:588)
+	at aQute.bnd.osgi.Analyzer.analyze(Analyzer.java:171)
+	at aQute.bnd.osgi.Builder.analyze(Builder.java:344)
+	at aQute.bnd.osgi.Analyzer.calcManifest(Analyzer.java:618)
+	at aQute.bnd.osgi.Builder.build(Builder.java:81)
+	at aQute.bnd.osgi.Builder.builds(Builder.java:1243)
+	at aQute.bnd.build.ProjectBuilder.builds(ProjectBuilder.java:520)
+	at aQute.bnd.build.Project.buildLocal(Project.java:1417)
+	at org.bndtools.builder.NewBuilder.rebuild(NewBuilder.java:655)
+	at org.bndtools.builder.NewBuilder.rebuildIfLocalChanges(NewBuilder.java:545)
+	at org.bndtools.builder.NewBuilder.build(NewBuilder.java:179)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

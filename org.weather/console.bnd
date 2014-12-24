@@ -1,0 +1,5 @@
+Private-Package:  \
+	org.weather.console
+Bundle-Activator: org.weather.console.Activator
+Export-Package:  \
+	org.weather.console
