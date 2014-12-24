@@ -27,7 +27,7 @@ javac.target: 1.8
 ## For example, to add one additional plugin to the list defined in ext/repositories.bnd:
 # -plugin: ${ext.repositories.-plugin}, org.example.MyPlugin
 -plugin: ${ext.repositories.-plugin}
--plugin.dmannotations = org.apache.felix.dm.annotation.plugin.bnd.AnnotationPlugin;path:=${plugin-dir}/org.apache.felix.dependencymanager.annotation-3.2.0.jar;build-import-export-service=false
+-plugin.dmannotations = org.apache.felix.dm.annotation.plugin.bnd.AnnotationPlugin;path:=${project}/plugins/org.apache.felix.dependencymanager.annotation-3.2.0.jar;build-import-export-service=false
 
 ## If you use git, you might want to uncomment the following lines:
 # Git-Descriptor: ${system-allow-fail;git describe --dirty --always}
