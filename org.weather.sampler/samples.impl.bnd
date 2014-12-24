@@ -1,0 +1,3 @@
+Bundle-Activator: org.weather.samples.impl.Activator
+Private-Package:  \
+	org.weather.samples.impl

@@ -3,11 +3,11 @@ package org.weather.rest;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
-import org.apache.felix.dm.annotation.api.Component;
+//import org.apache.felix.dm.annotation.api.Component;
 import org.weather.TemperatureService;
 
 
-@Component(provides=Object.class)
+//@Component(provides=Object.class)
 @Path("weather")
 public class TemperatureRest {
 

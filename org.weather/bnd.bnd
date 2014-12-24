@@ -1,5 +1,6 @@
 -buildpath:  \
 	org.apache.felix.dependencymanager,\
+	../cnf/plugins/org.apache.felix.dependencymanager.annotation-3.2.0.jar;version=file,\
 	osgi.core,\
 	org.amdatu.web.rest.jaxrs,\
 	org.amdatu.web.rest.doc,\
@@ -11,7 +12,6 @@
 	jackson-core-asl,\
 	org.apache.felix.gogo.runtime,\
 	org.apache.felix.gogo.command,\
-	org.apache.felix.gogo.shell,\
-		${workspace}/cnf/plugins/org.apache.felix.dependencymanager.annotation-3.2.0.jar;version=file
+	org.apache.felix.gogo.shell
 -sub:  \
 	*.bnd

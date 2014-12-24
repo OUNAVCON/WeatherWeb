@@ -1,0 +1,26 @@
+-runfw: org.apache.felix.framework;version='[4,5)'
+-runee: JavaSE-1.8
+-runsystemcapabilities: ${native_capability}
+
+-resolve.effective: active;skip:="osgi.service"
+
+-runbundles:  \
+	org.apache.felix.gogo.runtime,\
+	org.apache.felix.gogo.shell,\
+	org.apache.felix.gogo.command,\
+	org.weather.temperature;version=latest,\
+	org.weather.temperature.impl;version=latest,\
+	org.apache.felix.dependencymanager,\
+	org.apache.felix.dependencymanager.runtime,\
+	org.apache.felix.dependencymanager.shell,\
+	osgi.cmpn,\
+	javax.servlet,\
+	org.weather.console;version=latest,\
+	org.amdatu.scheduling.api,\
+	org.amdatu.scheduling.quartz,\
+	org.weather.sampler.samples;version=latest,\
+	org.weather.sampler.samples.impl;version=latest
+
+-runrequires:\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)'

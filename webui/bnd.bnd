@@ -1,7 +1,7 @@
 Bundle-Version: 0.0.0.${tstamp}
 -buildpath:  \
 	javax.servlet,\
-	${workspace}/cnf/plugins/org.apache.felix.dependencymanager.annotation-3.2.0.jar;version=file,\
+	../cnf/plugins/org.apache.felix.dependencymanager.annotation-3.2.0.jar;version=file,\
 	org.apache.felix.dependencymanager,\
 	osgi.core,\
 	org.amdatu.template.processor,\
