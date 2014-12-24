@@ -1,1 +1,9 @@
-*/generated/*
+*/generated/
+webui/generated/
+webui/node_modules/
+webui/dist/
+webui/bin/
+webui/bin_test
+webui/app/example/*.js
+*/bin/
+.metadata/

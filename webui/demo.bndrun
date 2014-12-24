@@ -1,5 +1,5 @@
 -runfw: org.apache.felix.framework;version='[4,5)'
--runee: JavaSE-1.8
+-runee: JavaSE-1.7
 -runsystemcapabilities: ${native_capability}
 
 -resolve.effective: active;skip:="osgi.service"
@@ -21,6 +21,6 @@
 	org.apache.felix.configadmin,\
 	org.apache.felix.log,\
 	org.amdatu.template.processor
--runproperties:  \
+	-runproperties:  \
 	org.osgi.service.http.port=9050,\
 	httpPort=9050

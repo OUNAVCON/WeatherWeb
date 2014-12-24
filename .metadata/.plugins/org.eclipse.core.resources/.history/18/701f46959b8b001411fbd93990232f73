@@ -1,0 +1,16 @@
+Bundle-Version: 0.0.0.${tstamp}
+-buildpath:  \
+	../cnf/plugins/org.apache.felix.dependencymanager.annotation-3.2.0.jar;version=file,\
+	javax.servlet,\
+	org.apache.felix.dependencymanager,\
+	osgi.core,\
+	org.amdatu.template.processor,\
+	osgi.cmpn
+Private-Package:  \
+	org.amdatu.bootstrap.webui.impl
+Include-Resource: dist/app=dist/app,resources=processed-resources/js
+X-Web-Resource-Version: 1.1
+X-Web-Resource: /ui;dist/app
+X-Web-Resource-Default-Page: index.html
+Export-Package:  \
+	org.amdatu.bootstrap.webui
