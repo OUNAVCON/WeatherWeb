@@ -19,7 +19,11 @@
 	org.amdatu.scheduling.api,\
 	org.amdatu.scheduling.quartz,\
 	org.weather.sampler.samples;version=latest,\
-	org.weather.sampler.samples.impl;version=latest
+	org.weather.sampler.samples.impl;version=latest,\
+	org.apache.felix.configadmin,\
+	org.apache.felix.fileinstall,\
+	org.ops4j.pax.logging.pax-logging-api,\
+	org.ops4j.pax.logging.pax-logging-service
 
 -runrequires:\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\

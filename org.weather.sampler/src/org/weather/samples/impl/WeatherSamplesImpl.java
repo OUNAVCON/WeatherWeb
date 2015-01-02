@@ -1,19 +1,27 @@
 package org.weather.samples.impl;
 
+import java.util.Dictionary;
+
 import org.amdatu.scheduling.annotations.RepeatForever;
 import org.amdatu.scheduling.annotations.RepeatInterval;
+import org.osgi.service.cm.ConfigurationException;
+import org.osgi.service.cm.ManagedService;
+import org.osgi.service.log.LogService;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.weather.TemperatureService;
-import org.weather.samples.WeatherSamples ;
+import org.weather.samples.WeatherSamplerConstants;
+import org.weather.samples.WeatherSamples;
 
 @RepeatForever
 @RepeatInterval(period=RepeatInterval.SECOND, value = 10)
-public class WeatherSamplesImpl implements WeatherSamples, Job{
+public class WeatherSamplesImpl implements WeatherSamples, Job, ManagedService {
 
 	private volatile TemperatureService temperatureService;
-	private static int MAX_NUMBER_OF_SAMPLES = 255;
+	private volatile LogService logService;
+	
+	private int MAX_NUMBER_OF_SAMPLES = 255;
 	//private CircularFifoQueue<Double> temperatureList = new CircularFifoQueue<Double>(MAX_NUMBER_OF_SAMPLES);
 	
 	
@@ -27,9 +35,28 @@ public class WeatherSamplesImpl implements WeatherSamples, Job{
 	 @Override
 	 public void execute(JobExecutionContext ctx) throws JobExecutionException {
 		 
-		 System.out.println("Executing job!");
 		 double temp = this.getLatestTemperater();
 		 System.out.println("CurrentTemp is: " + temp);
 	 }
+
+	@Override
+	public void updated(Dictionary<String, ?> parameters)
+			throws ConfigurationException {
+		if(parameters != null)
+		{
+			int previousValues = MAX_NUMBER_OF_SAMPLES;
+			try{
+				MAX_NUMBER_OF_SAMPLES = Integer.parseInt(String.valueOf(parameters.get(WeatherSamplerConstants.MAX_NUMBER_OF_STORED_SAMPLES)));
+
+				 if(logService != null){
+					 logService.log(LogService.LOG_INFO, "Number of samples changed from  " + previousValues + " to " + this.MAX_NUMBER_OF_SAMPLES);
+				 }
+			}
+			catch(Exception e){
+				
+			}
+		}
+		
+	}
 
 }
