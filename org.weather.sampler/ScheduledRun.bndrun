@@ -14,16 +14,18 @@
 	org.apache.felix.dependencymanager.runtime,\
 	org.apache.felix.dependencymanager.shell,\
 	osgi.cmpn,\
-	javax.servlet,\
 	org.weather.console;version=latest,\
 	org.amdatu.scheduling.api,\
 	org.amdatu.scheduling.quartz,\
 	org.weather.sampler.samples;version=latest,\
 	org.weather.sampler.samples.impl;version=latest,\
-	org.apache.felix.configadmin,\
-	org.apache.felix.fileinstall,\
+	org.apache.felix.configadmin;version=1.8.0,\
+	org.amdatu.configurator.autoconf;version=1.0.0,\
 	org.ops4j.pax.logging.pax-logging-api,\
-	org.ops4j.pax.logging.pax-logging-service
+	org.ops4j.pax.logging.pax-logging-service,\
+	org.amdatu.configurator.shell,\
+	org.amdatu.configurator.api,\
+	javax.servlet
 
 -runrequires:\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\

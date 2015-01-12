@@ -4,6 +4,7 @@ import java.util.Dictionary;
 
 import org.amdatu.scheduling.annotations.RepeatForever;
 import org.amdatu.scheduling.annotations.RepeatInterval;
+import org.apache.commons.collections4.queue.CircularFifoQueue;
 import org.osgi.service.cm.ConfigurationException;
 import org.osgi.service.cm.ManagedService;
 import org.osgi.service.log.LogService;
@@ -11,7 +12,6 @@ import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.weather.TemperatureService;
-import org.weather.samples.WeatherSamplerConstants;
 import org.weather.samples.WeatherSamples;
 
 @RepeatForever
@@ -21,14 +21,14 @@ public class WeatherSamplesImpl implements WeatherSamples, Job, ManagedService {
 	private volatile TemperatureService temperatureService;
 	private volatile LogService logService;
 	
-	private int MAX_NUMBER_OF_SAMPLES = 255;
-	//private CircularFifoQueue<Double> temperatureList = new CircularFifoQueue<Double>(MAX_NUMBER_OF_SAMPLES);
+	public volatile static int MAX_NUMBER_OF_SAMPLES = 255;
+	private CircularFifoQueue<Double> temperatureList = new CircularFifoQueue<Double>(MAX_NUMBER_OF_SAMPLES);
 	
 	
 	@Override
 	public double getLatestTemperater() {
 		double currentTemperatureSample = temperatureService.getTemperature();
-	    //temperatureList.add(currentTemperatureSample);
+	    temperatureList.add(currentTemperatureSample);
 	return currentTemperatureSample;
 	}
 	
@@ -36,7 +36,11 @@ public class WeatherSamplesImpl implements WeatherSamples, Job, ManagedService {
 	 public void execute(JobExecutionContext ctx) throws JobExecutionException {
 		 
 		 double temp = this.getLatestTemperater();
-		 System.out.println("CurrentTemp is: " + temp);
+		 if(logService != null){
+			 logService.log(LogService.LOG_INFO,"CurrentTemp is: " + temp);
+		 }
+	//	 System.out.println("CurrentTemp is: " + temp +" , with " + WeatherSamplesImpl.MAX_NUMBER_OF_SAMPLES + " samples");
+	//	 System.out.println("Average Temp is: " + temperatureList.stream().mapToDouble(w -> w).average().getAsDouble());
 	 }
 
 	@Override
@@ -46,10 +50,10 @@ public class WeatherSamplesImpl implements WeatherSamples, Job, ManagedService {
 		{
 			int previousValues = MAX_NUMBER_OF_SAMPLES;
 			try{
-				MAX_NUMBER_OF_SAMPLES = Integer.parseInt(String.valueOf(parameters.get(WeatherSamplerConstants.MAX_NUMBER_OF_STORED_SAMPLES)));
+				WeatherSamplesImpl.MAX_NUMBER_OF_SAMPLES = Integer.parseInt(String.valueOf(parameters.get(WeatherSamplerConstants.MAX_NUMBER_OF_STORED_SAMPLES)));
 
 				 if(logService != null){
-					 logService.log(LogService.LOG_INFO, "Number of samples changed from  " + previousValues + " to " + this.MAX_NUMBER_OF_SAMPLES);
+					 logService.log(LogService.LOG_INFO, "Number of samples changed from  " + previousValues + " to " + WeatherSamplesImpl.MAX_NUMBER_OF_SAMPLES);
 				 }
 			}
 			catch(Exception e){

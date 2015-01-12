@@ -1,0 +1,60 @@
+<MetaData xmlns="http://www.osgi.org/xmlns/metatype/v1.0.0"> 
+  <OCD name='ocd' id='ocd'>
+    <AD id='log4j.rootLogger' type='STRING' cardinality='0' />
+    <AD id='log4j.appender.stdout' type='STRING' cardinality='0' />
+    <AD id='log4j.appender.stdout.layout' type='STRING' cardinality='0' />
+    <AD id='log4j.appender.stdout.layout.ConversionPattern' type='STRING' cardinality='0' />
+    <AD id='log4j.category.org.eclipse.jetty' type='STRING' cardinality='0' />
+    <AD id='log4j.category.org.apache.ace' type='STRING' cardinality='0' />
+    <AD id='log4j.category.org.apache.felix' type='STRING' cardinality='0' />
+    <AD id='log4j.category.org.apache.activemq' type='STRING' cardinality='0' />
+    <AD id='log4j.category.org.amdatu.web.rest.wink' type='STRING' cardinality='0' />
+    <AD id='log4j.category.org.amdatu.web.rest.doc.swagger' type='STRING' cardinality='0' />
+    <AD id='log4j.category.org.amdatu.jpa' type='STRING' cardinality='0' />
+    <AD id='log4j.category.org.amdatu.jta' type='STRING' cardinality='0' />
+    <AD id='log4j.category.org.apache.commons' type='STRING' cardinality='0' />
+  </OCD>
+  <Designate pid='org.ops4j.pax.logging' bundle="osgi-dp:org.ops4j.pax.logging">
+    <Object ocdref='ocd'>
+      <Attribute adref='log4j.rootLogger'>
+        <Value><![CDATA[DEBUG, stdout]]></Value>
+      </Attribute>
+      <Attribute adref='log4j.appender.stdout'>
+        <Value><![CDATA[org.apache.log4j.ConsoleAppender]]></Value>
+      </Attribute>
+    <Attribute adref='log4j.appender.stdout.layout'>
+        <Value><![CDATA[org.apache.log4j.PatternLayout]]></Value>
+      </Attribute>
+	  <Attribute adref='log4j.appender.stdout.layout.ConversionPattern'>
+        <Value><![CDATA[%d{yyyy-MM-dd_HH:mm:ss} %-5p %c - %m%]]></Value>
+      </Attribute>
+      <Attribute adref='log4j.category.org.eclipse.jetty'>
+        <Value><![CDATA[INFO]]></Value>
+      </Attribute>
+      <Attribute adref='log4j.category.org.apache.ace'>
+        <Value><![CDATA[INFO]]></Value>
+      </Attribute>
+      <Attribute adref='log4j.category.org.apache.felix'>
+        <Value><![CDATA[INFO]]></Value>
+      </Attribute>
+      <Attribute adref='log4j.category.org.apache.activemq'>
+        <Value><![CDATA[INFO]]></Value>
+      </Attribute>
+      <Attribute adref='log4j.category.org.amdatu.web.rest.wink'>
+        <Value><![CDATA[WARN]]></Value>
+      </Attribute>
+      <Attribute adref='log4j.category.org.amdatu.web.rest.doc.swagger'>
+        <Value><![CDATA[WARN]]></Value>
+      </Attribute>
+      <Attribute adref='log4j.category.org.amdatu.jpa'>
+        <Value><![CDATA[INFO]]></Value>
+      </Attribute>
+      <Attribute adref='log4j.category.org.amdatu.jta'>
+        <Value><![CDATA[INFO]]></Value>
+      </Attribute>
+      <Attribute adref='log4j.category.org.apache.commons'>
+        <Value><![CDATA[INFO]]></Value>
+      </Attribute>
+    </Object>
+  </Designate>
+</MetaData>
