@@ -3,3 +3,4 @@ Private-Package:  \
 Bundle-Activator: org.weather.console.Activator
 Export-Package:  \
 	org.weather.console
+Bundle-Version: 0.0.1.${tstamp}
