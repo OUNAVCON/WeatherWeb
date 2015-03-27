@@ -12,9 +12,7 @@ public class TemperatureImpl implements TemperatureService {
 	
 	
 	@Override
-	public double getTemperature() {
-    System.out.println("<--Pi4J--> GPIO Blink Example ... started.");
-          
+	public double getTemperature() {          
 		result += (rand.nextDouble() - 0.5F);
 		return result;
 	}

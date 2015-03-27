@@ -15,7 +15,6 @@
 	jackson-core-asl,\
 	org.apache.felix.gogo.runtime,\
 	org.apache.felix.gogo.command,\
-	org.apache.felix.gogo.shell,\
-	pi4j-service
+	org.apache.felix.gogo.shell
 -sub:  \
 	*.bnd

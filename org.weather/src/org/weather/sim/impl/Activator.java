@@ -15,7 +15,9 @@ public class Activator extends DependencyActivatorBase{
 	@Override
 	public void init(BundleContext context, DependencyManager manager)
 			throws Exception {
-		manager.add(createComponent().setInterface(TemperatureService.class.getName(),null).setImplementation(TemperatureImpl.class));
+		manager.add(createComponent()
+				.setInterface(TemperatureService.class.getName(),null)
+				.setImplementation(TemperatureImpl.class));
 		
 	}
 
