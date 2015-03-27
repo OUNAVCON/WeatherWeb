@@ -37,3 +37,6 @@
 -runrequires:\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)'
+-runproperties:\
+	org.osgi.service.http.port=9050,\
+	httpPort=9050
