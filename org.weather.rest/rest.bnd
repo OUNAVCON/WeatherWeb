@@ -1,0 +1,3 @@
+Bundle-Activator: org.weather.rest.Activator
+Export-Package: org.weather.rest
+Bundle-Version: 0.0.1.${tstamp}
