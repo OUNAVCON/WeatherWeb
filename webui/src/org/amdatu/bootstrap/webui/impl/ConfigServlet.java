@@ -25,8 +25,8 @@ import org.osgi.service.cm.ConfigurationException;
 import org.osgi.service.cm.ManagedService;
 
 @Component(provides = {Servlet.class, ManagedService.class, WebBackendConfig.class}, 
-		   properties = {@Property(name = "alias", values = "/configuration.js"),
-						 @Property(name = Constants.SERVICE_PID, values="org.amdatu.bootstrap.webui")})
+		   properties = {@Property(name = "alias", values = "/configuration"),
+						 @Property(name = Constants.SERVICE_PID, values="webui")})
 public class ConfigServlet extends HttpServlet implements ManagedService, WebBackendConfig {
 	private static final long serialVersionUID = 1L;
 	

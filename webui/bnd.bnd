@@ -14,3 +14,22 @@ X-Web-Resource: /ui;dist/app
 X-Web-Resource-Default-Page: index.html
 Export-Package:  \
 	org.amdatu.bootstrap.webui
+-runbundles: \
+	org.apache.felix.gogo.command,\
+	org.apache.felix.gogo.runtime,\
+	org.apache.felix.gogo.shell,\
+	org.amdatu.template.processor,\
+	org.apache.felix.dependencymanager;version='[3,4)',\
+	org.apache.felix.configadmin,\
+	org.apache.felix.metatype,\
+	org.apache.felix.dependencymanager.runtime;version='[3,4)',\
+	org.apache.felix.dependencymanager.shell;version='[3,4)',\
+	org.apache.felix.http.whiteboard,\
+	org.apache.felix.http.api,\
+	org.apache.felix.http.jetty,\
+	org.apache.felix.http.servlet-api,\
+	org.apache.felix.eventadmin,\
+	javax.servlet,\
+	org.amdatu.web.resourcehandler
+-runfw: org.apache.felix.framework;version='[4.2.1,4.2.1]'
+-runee: JavaSE-1.8

@@ -1,9 +1,9 @@
--runfw: org.apache.felix.framework;version='[4,5)'
--runee: JavaSE-1.7
+-runfw: org.apache.felix.framework;version='[4.2.1,4.2.1]'
+-runee: JavaSE-1.8
 -runsystemcapabilities: ${native_capability}
 
 -resolve.effective: active;skip:="osgi.service"
--runbundles:  \
+-runbundles: \
 	webui;version=latest,\
 	org.apache.felix.gogo.command,\
 	org.apache.felix.gogo.runtime,\
@@ -13,14 +13,15 @@
 	org.amdatu.web.resourcehandler,\
 	org.apache.felix.http.servlet-api,\
 	org.apache.felix.http.api,\
-	org.apache.felix.dependencymanager,\
-	org.apache.felix.dependencymanager.runtime,\
-	org.apache.felix.dependencymanager.shell,\
+	org.apache.felix.dependencymanager;version='(3,4]',\
+	org.apache.felix.dependencymanager.runtime;version='(3,4]',\
+	org.apache.felix.dependencymanager.shell;version='(3,4]',\
 	org.apache.felix.metatype,\
 	org.apache.felix.eventadmin,\
 	org.apache.felix.configadmin,\
 	org.apache.felix.log,\
-	org.amdatu.template.processor
-	-runproperties:  \
-	org.osgi.service.http.port=9050,\
-	httpPort=9050
+	org.amdatu.template.processor,\
+	javax.servlet
+	-runproperties:\
+	org.osgi.service.http.port=8080,\
+	httpPort=8080

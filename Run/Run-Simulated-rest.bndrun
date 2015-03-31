@@ -31,7 +31,9 @@
 	org.weather.console;version=latest,\
 	org.apache.felix.configadmin,\
 	-runrequires:osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
+	webui;version=latest,\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
+	org.amdatu.template.processor
 	org.weather.sampler.samples;version=latest,\
 	org.weather.sampler.samples.impl;version=latest,\
 	org.amdatu.scheduling.api,\
