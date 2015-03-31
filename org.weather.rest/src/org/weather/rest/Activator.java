@@ -3,7 +3,8 @@ package org.weather.rest;
 import org.apache.felix.dm.DependencyActivatorBase;
 import org.apache.felix.dm.DependencyManager;
 import org.osgi.framework.BundleContext;
-import org.weather.TemperatureService;
+import org.weather.WeatherService;
+import org.weather.samples.WeatherSamples;
 
 public class Activator extends DependencyActivatorBase{
 
@@ -17,10 +18,13 @@ public class Activator extends DependencyActivatorBase{
 	public void init(BundleContext context, DependencyManager manager)
 			throws Exception {
 		manager.add(createComponent().setInterface(Object.class.getName(),null)
-				                     .setImplementation(TemperatureRest.class)
+				                     .setImplementation(WeatherRest.class)
 				                     .add(createServiceDependency()
-				                    		 .setService(TemperatureService.class)
-				                    		 .setRequired(true)));
+				                    		 .setService(WeatherService.class)
+				                    		 .setRequired(true))
+				                    .add(createServiceDependency()
+						              		 .setService(WeatherSamples.class)
+						                	 .setRequired(true)));
 	}
 
 }

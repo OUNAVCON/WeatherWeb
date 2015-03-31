@@ -1,3 +1,0 @@
-Private-Package: org.weather.sim.impl
-Bundle-Version: 0.0.1.${tstamp}
-Bundle-Activator: org.weather.sim.impl.Activator
