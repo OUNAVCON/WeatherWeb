@@ -4,6 +4,7 @@
 	../cnf/plugins/pi4j-1.0-SNAPSHOT/lib/pi4j-core.jar;version=file,\
 	../cnf/plugins/pi4j-1.0-SNAPSHOT/lib/pi4j-device.jar;version=file,\
 	../cnf/plugins/pi4j-1.0-SNAPSHOT/lib/pi4j-gpio-extension.jar;version=file,\
+	../cnf/plugins/commons-collections4-4.0.jar;version=file,\
 	osgi.core,\
 	org.amdatu.web.rest.jaxrs,\
 	org.amdatu.web.rest.doc,\
@@ -15,6 +16,7 @@
 	jackson-core-asl,\
 	org.apache.felix.gogo.runtime,\
 	org.apache.felix.gogo.command,\
-	org.apache.felix.gogo.shell
+	org.apache.felix.gogo.shell,\
+	org.apache.felix.configadmin
 -sub:  \
 	*.bnd

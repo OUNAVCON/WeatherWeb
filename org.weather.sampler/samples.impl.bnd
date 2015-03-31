@@ -16,3 +16,4 @@ Private-Package:  \
 	org.apache.commons.collections4.functors,\
 	org.apache.commons.collections4.iterators,\
 	org.apache.commons.collections4.keyvalue
+Bundle-Version: 0.0.1.${tstamp}

@@ -1,13 +1,13 @@
 package org.weather.console;
 
-import org.weather.TemperatureService;
+import org.weather.WeatherService;
 
 public class Commands {
 
-	private volatile TemperatureService temperatureService;
+	private volatile WeatherService temperatureService;
 	
 	public void printTemperature(){
-		System.out.println(temperatureService.getTemperature());
+		System.out.println(temperatureService.getWeather());
 	}
 	
 	

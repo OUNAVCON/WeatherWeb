@@ -2,8 +2,6 @@
 -runee: JavaSE-1.8
 -runsystemcapabilities: ${native_capability}
 
--resolve.effective: active;skip:="osgi.service"
-
 -runbundles: \
 	org.apache.felix.gogo.runtime,\
 	org.apache.felix.gogo.shell,\
@@ -13,9 +11,8 @@
 	org.apache.felix.dependencymanager.shell;version='(3,4]',\
 	osgi.core,\
 	osgi.cmpn,\
-	org.weather.rest;version=latest,\
-	org.weather.temperature;version=latest,\
-	org.weather.temperature.simulated.impl;version=latest,\
+	org.weather.api;version=latest,\
+	org.weather.simulated.impl;version=latest,\
 	org.amdatu.web.rest.jaxrs,\
 	org.amdatu.web.rest.wink,\
 	org.amdatu.web.resourcehandler,\
@@ -32,11 +29,16 @@
 	org.amdatu.web.rest.doc.swagger.ui,\
 	org.amdatu.web.rest.doc,\
 	org.weather.console;version=latest,\
-	org.apache.felix.configadmin
-
--runrequires:\
-	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
-	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)'
+	org.apache.felix.configadmin,\
+	-runrequires:osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
+	org.weather.sampler.samples;version=latest,\
+	org.weather.sampler.samples.impl;version=latest,\
+	org.amdatu.scheduling.api,\
+	org.amdatu.scheduling.quartz,\
+	org.weather.rest.rest;version=latest,\
+	org.ops4j.pax.logging.pax-logging-api,\
+	org.ops4j.pax.logging.pax-logging-service
 -runproperties:\
 	org.osgi.service.http.port=9050,\
 	httpPort=9050

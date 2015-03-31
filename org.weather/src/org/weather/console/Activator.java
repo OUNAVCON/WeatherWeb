@@ -6,7 +6,7 @@ import org.apache.felix.dm.DependencyActivatorBase;
 import org.apache.felix.dm.DependencyManager;
 import org.apache.felix.service.command.CommandProcessor;
 import org.osgi.framework.BundleContext;
-import org.weather.TemperatureService;
+import org.weather.WeatherService;
 
 public class Activator extends DependencyActivatorBase{
 
@@ -24,7 +24,7 @@ public class Activator extends DependencyActivatorBase{
 		props.put(CommandProcessor.COMMAND_SCOPE, "Weather");
 		props.put(CommandProcessor.COMMAND_FUNCTION, new String[] {"printTemperature"});
 		
-		manager.add(createComponent().setInterface(Object.class.getName(), props).setImplementation(Commands.class).add(createServiceDependency().setService(TemperatureService.class).setRequired(true)));
+		manager.add(createComponent().setInterface(Object.class.getName(), props).setImplementation(Commands.class).add(createServiceDependency().setService(WeatherService.class).setRequired(true)));
 	}
 
 }

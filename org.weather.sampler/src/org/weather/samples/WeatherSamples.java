@@ -1,6 +1,8 @@
 package org.weather.samples;
 
+import org.weather.Weather;
+
 public interface WeatherSamples {
 
-	public double getLatestTemperater();
+	public Weather getLatestWeather();
 }

@@ -1,12 +1,12 @@
--buildpath:  \
+-buildpath: \
 	../cnf/plugins/org.apache.felix.dependencymanager.annotation-3.2.0.jar;version=file,\
 	../cnf/plugins/commons-collections4-4.0.jar;version=file,\
 	org.apache.felix.dependencymanager,\
 	osgi.core,\
-	org.weather.temperature;version=latest,\
 	org.amdatu.scheduling.api,\
 	org.amdatu.scheduling.quartz,\
 	org.apache.felix.configadmin,\
-	org.apache.felix.log
+	org.apache.felix.log,\
+	org.weather.api;version=latest
 -sub:  \
 	*.bnd

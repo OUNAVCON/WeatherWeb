@@ -1,2 +1,3 @@
 Export-Package:  \
 	org.weather.samples
+Bundle-Version: 0.0.1.${tstamp}
