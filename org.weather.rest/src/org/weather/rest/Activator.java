@@ -11,7 +11,6 @@ public class Activator extends DependencyActivatorBase{
 	@Override
 	public void destroy(BundleContext arg0, DependencyManager arg1)
 			throws Exception {
-		// TODO Auto-generated method stub
 	}
 
 	@Override

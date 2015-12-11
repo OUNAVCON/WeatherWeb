@@ -1,30 +1,45 @@
--runfw: org.apache.felix.framework;version='[4,5)'
--runee: JavaSE-1.7
+-runfw: org.apache.felix.framework;version='[5.2.0,5.2.0]'
+-runee: JavaSE-1.8
 -runsystemcapabilities: ${native_capability}
 
 -resolve.effective: active;skip:="osgi.service"
 
--runbundles:\
-org.apache.felix.gogo.runtime,\
+-runbundles: \
+	org.apache.felix.gogo.runtime,\
 	org.apache.felix.gogo.shell,\
 	org.apache.felix.gogo.command,\
-	org.weather.temperature;version=latest,\
 	org.apache.felix.dependencymanager,\
 	org.apache.felix.dependencymanager.runtime,\
 	org.apache.felix.dependencymanager.shell,\
 	jackson-core-asl,\
 	jackson-mapper-asl,\
-	org.amdatu.web.rest.doc;version='[1.1,1.2)',\
-	org.amdatu.web.rest.doc.swagger;version='[1.0,1.1)',\
-	org.amdatu.web.rest.doc.swagger.ui;version='[1.0,1.1)',\
-	org.amdatu.web.rest.jaxrs;version='[1.0,1.1)',\
-	org.amdatu.web.rest.wink;version='[1.0,1.1)',\
-	jackson-jaxrs;version='[1.9.8,1.9.8]',\
+	org.amdatu.web.rest.doc,\
+	org.amdatu.web.rest.doc.swagger,\
+	org.amdatu.web.rest.doc.swagger.ui,\
+	org.amdatu.web.rest.jaxrs,\
+	org.amdatu.web.rest.wink,\
+	jackson-jaxrs,\
 	osgi.cmpn,\
 	javax.servlet,\
+	org.amdatu.web.resourcehandler,\
+	com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider,\
+	com.fasterxml.jackson.core.jackson-annotations,\
+	com.fasterxml.jackson.core.jackson-core,\
+	com.fasterxml.jackson.core.jackson-databind,\
+	com.fasterxml.jackson.jaxrs.jackson-jaxrs-base,\
+	org.weather.rest.rest,\
+	org.weather.sampler.samples.impl,\
+	org.weather.api;version=latest,\
 	org.weather.console;version=latest,\
-	org.amdatu.web.resourcehandler
-
+	org.weather.rest.rest;version=latest,\
+	org.weather.sampler.samples;version=latest,\
+	org.weather.sampler.samples.impl;version=latest,\
+	org.weather.simulated.impl;version=latest,\
+	org.amdatu.scheduling.api,\
+	org.amdatu.scheduling.quartz
 -runrequires:\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)'
+-runproperties: \
+	org.osgi.service.http.port=9050,\
+	httpPort=9050

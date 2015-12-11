@@ -29,7 +29,7 @@
 		<link>
 			<name>std-lib/lib.d.ts</name>
 			<type>1</type>
-			<location>C:/Users/irose/Desktop/Tetra/reference/eclipse-java-luna-SR1-win32-x86_64/eclipse/plugins/com.axmor.eclipse.typescript.core_3.1.0.201502192009/lib/bridge/ts/lib.d.ts</location>
+			<location>/Users/irose/eclipse/jee-mars/Eclipse.app/Contents/MacOS/C::/Users/irose/Desktop/Tetra/reference/eclipse-java-luna-SR1-win32-x86_64/eclipse/plugins/com.axmor.eclipse.typescript.core_3.1.0.201502192009/lib/bridge/ts/lib.d.ts</location>
 		</link>
 	</linkedResources>
 </projectDescription>

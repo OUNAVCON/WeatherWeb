@@ -1,4 +1,4 @@
--runfw: org.apache.felix.framework;version='[4,5)'
+-runfw: org.apache.felix.framework;version='[5.2.0,5.2.0]'
 -runee: JavaSE-1.8
 -runsystemcapabilities: ${native_capability}
 
@@ -6,9 +6,9 @@
 	org.apache.felix.gogo.runtime,\
 	org.apache.felix.gogo.shell,\
 	org.apache.felix.gogo.command,\
-	org.apache.felix.dependencymanager;version='(3,4]',\
-	org.apache.felix.dependencymanager.runtime;version='(3,4]',\
-	org.apache.felix.dependencymanager.shell;version='(3,4]',\
+	org.apache.felix.dependencymanager,\
+	org.apache.felix.dependencymanager.runtime,\
+	org.apache.felix.dependencymanager.shell,\
 	osgi.core,\
 	osgi.cmpn,\
 	org.weather.api;version=latest,\
@@ -23,24 +23,25 @@
 	com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider,\
 	org.apache.felix.http.jetty,\
 	org.apache.felix.http.whiteboard,\
-	org.apache.felix.http.api,\
-	org.apache.felix.http.servlet-api,\
 	org.amdatu.web.rest.doc.swagger,\
 	org.amdatu.web.rest.doc.swagger.ui,\
 	org.amdatu.web.rest.doc,\
 	org.weather.console;version=latest,\
 	org.apache.felix.configadmin,\
-	-runrequires:osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
-	webui;version=latest,\
-	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
-	org.amdatu.template.processor
+	jackson-core-asl,\
+	jackson-mapper-asl,\
+	org.apache.felix.http.servlet-api,\
+	org.ops4j.pax.logging.pax-logging-api,\
+	org.ops4j.pax.logging.pax-logging-service,\
+	org.amdatu.configurator.autoconf,\
+	org.amdatu.configurator.shell,\
+	org.apache.felix.log,\
+	org.apache.felix.http.api,\
+	org.weather.rest.rest;version=latest,\
 	org.weather.sampler.samples;version=latest,\
 	org.weather.sampler.samples.impl;version=latest,\
 	org.amdatu.scheduling.api,\
-	org.amdatu.scheduling.quartz,\
-	org.weather.rest.rest;version=latest,\
-	org.ops4j.pax.logging.pax-logging-api,\
-	org.ops4j.pax.logging.pax-logging-service
+	org.amdatu.scheduling.quartz
 -runproperties:\
 	org.osgi.service.http.port=9050,\
 	httpPort=9050

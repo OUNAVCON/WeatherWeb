@@ -1,9 +1,5 @@
 -buildpath: \
-	org.apache.felix.dependencymanager,\
-	../cnf/plugins/org.apache.felix.dependencymanager.annotation-3.2.0.jar;version=file,\
-	../cnf/plugins/pi4j-1.0-SNAPSHOT/lib/pi4j-core.jar;version=file,\
-	../cnf/plugins/pi4j-1.0-SNAPSHOT/lib/pi4j-device.jar;version=file,\
-	../cnf/plugins/pi4j-1.0-SNAPSHOT/lib/pi4j-gpio-extension.jar;version=file,\
+	org.apache.felix.dependencymanager;version=latest,\
 	../cnf/plugins/commons-collections4-4.0.jar;version=file,\
 	osgi.core,\
 	org.amdatu.web.rest.jaxrs,\
@@ -17,6 +13,7 @@
 	org.apache.felix.gogo.runtime,\
 	org.apache.felix.gogo.command,\
 	org.apache.felix.gogo.shell,\
-	org.apache.felix.configadmin
+	org.apache.felix.configadmin,\
+	org.apache.felix.dependencymanager.annotation
 -sub:  \
 	*.bnd

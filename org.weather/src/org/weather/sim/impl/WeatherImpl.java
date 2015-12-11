@@ -68,5 +68,17 @@ public class WeatherImpl implements WeatherService, ManagedService  {
 		}
 		
 	}
+
+
+	@Override
+	public List<Weather> getWeatherSamples(int start, int count) {
+		List<Weather> result = new ArrayList<Weather>();
+		if(start <= count+temperatureList.size()){
+		 for(int index = start; index<=count;index++){
+           result.add(this.temperatureList.get(start));
+		 }
+		}
+		return result;
+	}
 	
 }

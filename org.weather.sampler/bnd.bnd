@@ -1,7 +1,7 @@
 -buildpath: \
 	../cnf/plugins/org.apache.felix.dependencymanager.annotation-3.2.0.jar;version=file,\
 	../cnf/plugins/commons-collections4-4.0.jar;version=file,\
-	org.apache.felix.dependencymanager,\
+	org.apache.felix.dependencymanager;version=latest,\
 	osgi.core,\
 	org.amdatu.scheduling.api,\
 	org.amdatu.scheduling.quartz,\

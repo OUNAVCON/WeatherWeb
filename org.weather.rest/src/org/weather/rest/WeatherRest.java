@@ -5,10 +5,6 @@ import java.util.List;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
-
-
-
-
 //import org.apache.felix.dm.annotation.api.Component;
 import org.weather.WeatherService;
 import org.weather.Weather;
@@ -22,6 +18,7 @@ public class WeatherRest {
 	@GET
 	  @Produces(MediaType.APPLICATION_JSON)
 	  public Weather getWeather() {
+		System.out.println("made it this far");
 	    return temperatureService.getWeather();
 	  }
 
@@ -37,6 +34,13 @@ public class WeatherRest {
 	  @Path("getAllWeatherSamples")
 	  @Produces(MediaType.APPLICATION_JSON)
 	  public List<Weather> getAllWeatherSamples(){
-		  return temperatureService.getAllWeatherSamples();
+		  return temperatureService.getAllWeatherSamples()  ;
+	  }
+	  
+	  @GET
+	  @Path("getWeatherSamples")
+	  @Produces(MediaType.APPLICATION_JSON)
+	  public List<Weather> getWeatherSamples(@QueryParam("start") int start,@QueryParam("count") int count){
+		  return temperatureService.getWeatherSamples(start, count);
 	  }
 }

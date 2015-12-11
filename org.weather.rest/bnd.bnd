@@ -1,6 +1,6 @@
 Bundle-Version: 0.0.0.${tstamp}
 -buildpath: \
-	org.apache.felix.dependencymanager,\
+	org.apache.felix.dependencymanager;version=latest,\
 	osgi.core,\
 	org.amdatu.web.rest.jaxrs,\
 	org.amdatu.web.rest.doc,\
