@@ -41,7 +41,9 @@
 	org.weather.sampler.samples;version=latest,\
 	org.weather.sampler.samples.impl;version=latest,\
 	org.amdatu.scheduling.api,\
-	org.amdatu.scheduling.quartz
+	org.amdatu.scheduling.quartz,\
+	webui;version=latest,\
+	org.amdatu.template
 -runproperties:\
 	org.osgi.service.http.port=9050,\
 	httpPort=9050

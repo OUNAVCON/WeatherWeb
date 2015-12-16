@@ -4,13 +4,11 @@ import java.util.List;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-
-//import org.apache.felix.dm.annotation.api.Component;
 import org.weather.WeatherService;
 import org.weather.Weather;
 
 
-//@Component(provides=Object.class)
+
 @Path("weather")
 public class WeatherRest {
 
