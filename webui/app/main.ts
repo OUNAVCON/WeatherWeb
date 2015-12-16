@@ -11,7 +11,7 @@ require
             'Rx' : 'bower_components/rxjs/dist/rx.lite',
             'Stomp' : 'bower_components/stomp-websocket/lib/stomp',
             'Atmosphere' : 'bower_components/atmosphere/atmosphere',
-            'Config' : 'http://localhost:8181/configuration',
+            //'Config' : 'http://localhost:8181/configuration',
             'jquery' : 'bower_components/jquery/dist/jquery.min'
         },
 

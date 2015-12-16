@@ -3,5 +3,8 @@
  */
 interface Weather {
     temperature: number;
-
+    humidity: number;
+    windSpeed: number;
+    windDirection: number;
+    barometricPressure: number;
 }

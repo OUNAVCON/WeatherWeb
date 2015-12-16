@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = function (grunt) {
-
+    grunt.loadNpmTasks('grunt-serve');
     grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-contrib-requirejs");
     grunt.loadNpmTasks("grunt-contrib-concat");
@@ -37,7 +37,11 @@ module.exports = function (grunt) {
                 }
             }
         },
-
+	serve: {
+		options: {
+			port: 9000
+		}
+	},
         uglify: {
             dist: {
                 preserveComments: false,
@@ -117,7 +121,7 @@ module.exports = function (grunt) {
         typescript: {
             dev: {
                 src: ['app/**/*.ts'],
-                dest: 'app/',
+                dest: 'dist/app/',
                 options: {
                     module: 'amd', //or commonjs
                     target: 'es5', //or es3
@@ -133,7 +137,7 @@ module.exports = function (grunt) {
             },
             base: {
                 src: ['app/**/*.ts'],
-                dest: 'app/',
+                dest: 'dist/app/',
                 options: {
                     module: 'amd', //or commonjs
                     target: 'es5', //or es3
@@ -194,6 +198,6 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask("default", ["clean", "typescript:base", "sass:dist", "htmlmin", "requirejs", "concat", "replace", "uglify", "copy:main"]);
-    grunt.registerTask("dev", ["typescript:base", "sass:dev", "watch"]);
+    grunt.registerTask("default", ["clean", "typescript:base", "sass:dist", "htmlmin", "concat", "requirejs", "replace", "uglify", "copy:main"]);
+    grunt.registerTask("dev", ["typescript", "sass:dev", "serve", "watch"]);
 };
