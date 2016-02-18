@@ -1,0 +1,14 @@
+{
+  "name": "test",
+  "description": "Test projecct",
+  "version": "1.0.0",
+  "keywords": [
+    "test"
+  ],
+  "url": "no",
+  "author": {
+    "name": "Isaac Rose",
+    "email": "isaac.rose@avility.com"
+  },
+  "private": true
+}

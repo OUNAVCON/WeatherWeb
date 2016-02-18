@@ -1,7 +1,7 @@
 -runfw: org.apache.felix.framework;version='[5.2.0,5.2.0]'
 -runee: JavaSE-1.8
 -runsystemcapabilities: ${native_capability}
-
+-resolve.effective: active;skip:="osgi.service"
 -runbundles: \
 	org.apache.felix.gogo.runtime,\
 	org.apache.felix.gogo.shell,\
@@ -42,8 +42,9 @@
 	org.weather.sampler.samples.impl;version=latest,\
 	org.amdatu.scheduling.api,\
 	org.amdatu.scheduling.quartz,\
-	webui;version=latest,\
-	org.amdatu.template
+	org.weather.ui;version=latest,\
+	org.amdatu.template,\
+	org.weather.AVui;version=latest
 -runproperties:\
 	org.osgi.service.http.port=9050,\
 	httpPort=9050

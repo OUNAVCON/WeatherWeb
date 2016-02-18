@@ -1,0 +1,19 @@
+apply plugin: 'com.moowork.grunt'
+
+buildscript {
+	repositories {
+		jcenter()
+	}
+	dependencies {
+		classpath 'com.moowork.gradle:gradle-grunt-plugin:0.6'
+	}
+}
+
+
+build.dependsOn installGrunt
+build.dependsOn npmInstall
+build.dependsOn grunt_default
+
+grunt_default.shouldRunAfter npmInstall
+npmInstall.shouldRunAfter installGrunt
+build.shouldRunAfter grunt_default

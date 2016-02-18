@@ -1,0 +1,7 @@
+/bin_test/
+/bower_components/
+/dist/
+/processed-resources/
+*/bower_components/
+*/node_modules/
+.idea/

@@ -1,0 +1,30 @@
+Bundle-Version: 1.0.0
+-buildpath: \
+	org.amdatu.testing.configurator;version='[3.1,4)',\
+	osgi.core;version=5.0,\
+	org.apache.felix.dependencymanager;version='[4,5)',\
+	org.apache.servicemix.bundles.junit,\
+	osgi.cmpn,\
+	org.apache.felix.http.servlet-api,\
+	org.amdatu.template.processor
+	
+-runbundles:  \
+	org.apache.felix.configadmin,\
+	org.apache.felix.dependencymanager;version='[4,5)',\
+	org.apache.felix.dependencymanager.runtime;version='[4,5)',\
+	org.apache.felix.metatype,\
+	org.apache.felix.eventadmin,\
+	org.apache.felix.log,\
+	org.apache.servicemix.bundles.junit,\
+	org.amdatu.testing.configurator;version='[3.1,4)'
+
+-runfw: org.apache.felix.framework;version='[4.2.1,4.2.1]'
+-runee: JavaSE-1.8
+Include-Resource: \
+	dist/app=dist/app,\
+	Include-Resource: dist/app=dist/app,resources=processed-resources
+X-Web-Resource:  /org.weather.webui;dist/app
+X-Web-Resource-Default-Page:  index.html
+X-Web-Resource-Version:  1.1
+Private-Package: org.amdatu.bootstrap.webui.impl
+Export-Package: org.amdatu.bootstrap.webui

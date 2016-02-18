@@ -1,0 +1,19 @@
+/* variables */
+/* app styling */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+.header {
+  height: 3.5em;
+  padding-left: 11.3em;
+  background: #000 url(../images/amdatu_logo.png) no-repeat 1.5em/9em; }
+  .header h1 {
+    float: left;
+    font-size: 1.2em;
+    color: #fff;
+    line-height: 0.9em;
+    font-style: italic; }
+
+/*# sourceMappingURL=amdatu.bootstrap.css.map */

@@ -1,0 +1,30 @@
+{
+  "name": "Weather",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Isaac Rose <isaacdrose@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/OUNAVCON/WeatherWeb",
+  "moduleType": [
+    "amd"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "bootstrap-css": "^3.3.6",
+    "lodash": "^4.3.0",
+    "requirejs": "^2.1.22",
+    "domReady": "requirejs-domready#^2.0.1",
+    "angular-bootstrap": "^1.1.2",
+    "jquery": "^2.2.0"
+  }
+}
